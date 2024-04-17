@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baking page</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    padding: 100px;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: #b5b5b5;
+}
+
+.logo{
+    position: relative;
+    max-width: 80px;
+}
+
+.brownie {
+    background-color: #f0954f;
+    height:600px;
+    display: flex;
+}
+
+.image-container {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+
+}
+
+.image-container img {
+    width: 90%;
+margin-left: 120px;
+}
+
+.text-container {
+    flex: 1; 
+     display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+
+img {
+    border-radius: 20px;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.textBox{
+    position: relative;
+    max-width: 600px;
+}
+.textBox h2{
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+.textBox h2 span{
+    color: #f0954f;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.textBox p{
+    color: #333;
+}
+.textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #f0954f;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.imgBox{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+.imgBox img{
+    max-width: 340px;
+}
+.thumb{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    display: flex;
+}
+.thumb li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.thumb li:hover{
+    transform: translateY(-15px);
+}
+.thumb li img{
+    max-width: 60px;
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0954f;
+    clip-path: circle(600px at right 800px);
+}
+
+@media (max-width: 480px) {
+        section {
+            padding: 50px 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 60px;
+        }
+
+        .content {
+            padding-top: 30px;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .textBox {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .textBox h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .textBox p {
+            max-width: none;
+        }
+
+        .imgBox {
+            padding-right: 0;
+            width: 150px;
+        }
+
+        .imgBox img {
+            width: 150px;
+        }
+
+        ul.thumb {
+            bottom: 10px;
+            transform: translateX(-50%);
+        }
+
+        ul.thumb li img {
+            width: 50px;
+        }
+
+        .brownie {
+            flex-direction: column;
+            padding: 10px;
+        }
+       
+        .image-container,
+        .text-container {
+            flex-direction: column;
+            justify-content: center;
+            max-width: 90%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a><img src="baking.jpg" class="logo"></a>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>It's not just a hobby. It's a <span>Passsion</span></h2>
+                <p>I started baking when I was starting my middle school. I had many fails along the way but they led me to the baking enthusiast I am now. You can see some of my works here or on the instagram by clicking the button below.</p>
+                <a href="https://www.instagram.com/ans_sweets/" target="_blank">Learn More</a>
+            </div>
+            <div class="imgBox">
+                <img src="cookie.jpg" class="bake">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><a><img src="cookie.jpg" onclick="imgSlider('cookie.jpg'); changeCircleColor('#f0954f') " ></a></li>
+            <li><a><img src="b2.jpg" onclick="imgSlider('b2.jpg'); changeCircleColor('#e3937b') " ></a></li>
+            <li><a><img src="b3.jpg" onclick="imgSlider('b3.jpg'); changeCircleColor('#f2c27e') " ></a></li>
+        </ul>
+    </section>
+     <script type="text/javascript">
+        function imgSlider(anything){
+            document.querySelector('.bake').src = anything;
+        }
+        function changeCircleColor(color){
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+
+    </script>
+<div class="brownie">
+    <div class="image-container">
+        <img src="base3.png">
+    </div>
+    <div class="text-container">
+        <p style="color: white; font-size: 18px;">If you want to learn how to make brownies, follow this <a href="brownie.html" target="_blank">link</a></p>
+    </div>
+</div>
+</body>
+</html>

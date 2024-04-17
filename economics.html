@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Situation</title>
+    <style type="text/css">
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #f2c27e;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+nav {
+    background-color: #fff;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+section p {
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: #f2c27e;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#overview a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+#overview a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: #b5b5b5;
+}
+
+#overview {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+#overview .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#overview h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+#overview #news {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.news-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.containerP {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    #overview {
+        padding: 20px 10px;
+    }
+
+    #overview .container {
+        padding: 0;
+    }
+
+    #overview h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    #overview #news {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+
+    .news-card {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .news-card h3 {
+        font-size: 1.2em;
+    }
+
+    .containerP {
+        padding: 10px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <h1>Economic Situation around the Globe</h1>
+        <p>Stay informed about the world's economy</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#indicators">Key Indicators</a></li>
+            <li><a href="#predictions">Predictions</a></li>
+        </ul>
+    </nav>
+
+    <section id="overview">
+    <div class="container">
+        <h2>Overview</h2>
+        <p>Get a bird's eye view of the current global economic landscape by reading recent news.</p>
+        <div id="news"></div>
+    </div>
+    <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    displaySampleNews();
+});
+
+function displaySampleNews() {
+    const newsContainer = document.getElementById('news');
+    
+    const sampleNews = [
+        {
+            title: "Think Tesla is in trouble?",
+            description: "Tesla has had a bumpy ride. In January the electric-vehicle (ev) pioneer warned that growth would be “notably lower” this year.",
+            source: "Economist",
+            url: "https://www.economist.com/business/2024/04/07/think-tesla-is-in-trouble-pity-even-more-its-wannabe-ev-rivals"
+        },
+        {
+            title: "The Case Against Crowdfunding in the Work Chat",
+            description: "Meta employees lost big on real estate investments touted by a colleague.",
+            source: "Bloomberg",
+            url: "https://www.bloomberg.com/news/articles/2024-04-04/the-case-against-crowdfunding-in-the-work-chat?srnd=homepage-americas"
+        },
+        {
+            title: "2024 жылы Ұлттық қордан қанша ақша алынады?",
+            description: "Премьер-министрдің орынбасары - қаржы министрі Ерұлан Жамаубаев үкімет отырысында келер жылы Ұлттық қордан 3,6 триллион теңге көлемінде трансферттер тартылатынын мәлімдеді.",
+            source: "Tengrinews",
+            url: "https://kaz.tengrinews.kz/private_finance/2024-jyilyi-ulttyik-kordan-kansha-aksha-alyinadyi-353566/"
+        },
+        {
+            title: "Еліміздегі асқан қымбатшылыққа айыптылар анықталуда",
+            description: "Республика Үкіметті жаңартқанымен, инфляция оған да бой беретін емес. Ұлттық статистика бюросы хабарлағандай, елімізде 2024 жылғы ақпан айының қорытындысында жылдық инфляция 9,3%-ға жетті.",
+            source: "InBusiness",
+            url: "https://inbusiness.kz/kz/news/elimizdegi-askan-kymbatshylykka-ajyptylar-anyktaluda"
+        }
+    ];
+
+    sampleNews.forEach(article => {
+        const newsCard = document.createElement('div');
+        newsCard.classList.add('news-card');
+
+        const title = document.createElement('h3');
+        title.textContent = article.title;
+
+        const description = document.createElement('p');
+        description.textContent = article.description;
+
+        const source = document.createElement('p');
+        source.textContent = `Source: ${article.source}`;
+
+        const link = document.createElement('a');
+        link.href = article.url;
+        link.textContent = 'Read more';
+        link.target = '_blank';
+
+        newsCard.appendChild(title);
+        newsCard.appendChild(description);
+        newsCard.appendChild(source);
+        newsCard.appendChild(link);
+
+        newsContainer.appendChild(newsCard);
+    });
+}
+    </script>
+    </section>
+
+    <section id="indicators">
+        <h2>Key Indicators</h2>
+        <p>Explore essential economic indicators such as GDP growth rate, inflation rate, unemployment rate, etc.</p>
+        <img src="graph.png">
+    </section>
+
+    <section id="predictions" style="background-color: white;">
+    <div class="containerP">
+        <h2>Predictions</h2>
+        <p>Discover forecasts and predictions for the future of the Kazakhstan economy regarding the percentage increase in average salaries (all figures are just speculative) (plotted using JavaScript):</p>
+        <canvas id="prediction-chart" width="800" height="400"></canvas>
+    </div>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    drawPredictionChart();
+});
+
+function drawPredictionChart() {
+    const canvas = document.getElementById('prediction-chart');
+    const ctx = canvas.getContext('2d');
+
+    const labels = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov"];
+    const values = [10, 7, 14, 20, 14, 10];
+
+    const chartWidth = canvas.width;
+    const chartHeight = canvas.height;
+    const padding = 40;
+    const dataWidth = chartWidth - 2 * padding;
+    const dataHeight = chartHeight - 2 * padding;
+    const maxValue = Math.max(...values);
+    const valueStep = Math.ceil(maxValue / 5);
+    const labelStep = Math.ceil(labels.length / 5);
+
+    ctx.clearRect(0, 0, chartWidth, chartHeight);
+
+    ctx.beginPath();
+    ctx.moveTo(padding, padding);
+    ctx.lineTo(padding, chartHeight - padding);
+    ctx.lineTo(chartWidth - padding, chartHeight - padding);
+    ctx.stroke();
+
+    for (let i = 0; i < 6; i++) {
+        const yPos = chartHeight - padding - (i * dataHeight / 5);
+        ctx.fillText(i * valueStep, padding - 30, yPos + 5);
+    }
+
+    for (let i = 0; i < labels.length; i++) {
+        const xPos = padding + i * (dataWidth / (labels.length - 1));
+        ctx.fillText(labels[i], xPos, chartHeight - padding + 20);
+    }
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 2;
+    ctx.moveTo(padding, chartHeight - padding - (values[0] * dataHeight / maxValue));
+    for (let i = 1; i < values.length; i++) {
+        const xPos = padding + i * (dataWidth / (labels.length - 1));
+        const yPos = chartHeight - padding - (values[i] * dataHeight / maxValue);
+        ctx.lineTo(xPos, yPos);
+    }
+    ctx.stroke();
+}
+</script>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ansar's Economic Analysis</p>
+    </footer>
+</body>
+</html>

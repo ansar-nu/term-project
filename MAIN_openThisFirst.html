@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style_1.css" />
+  <link rel="stylesheet" href="media.css" />
+  <script type="text/javascript">
+    function toggleMenu() {
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger-icon");
+      menu.classList.toggle("open");
+      icon.classList.toggle("open");
+    }
+  </script>
+</head>
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">Ansar Nurmakhambet</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#hometown">Hometown</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+      </ul>
+      <ul class="nav-links">
+        <li><a href="#professional">Professional interests</a></li>
+        <li><a href="#additional">Additional</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Ansar Nurmakhambet</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <ul class="nav-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#hometown" onclick="toggleMenu()">Hometown</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#hobbies" onclick="toggleMenu()">Hobbies</a></li>
+        </ul>
+        <ul class="nav-links">
+          <li><a href="#professional" onclick="toggleMenu()">Professional interests</a></li>
+          <li><a href="#additional" onclick="toggleMenu()">Additional</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contacts</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="profile.png" alt="Ansar's profile picture" style="border-radius: 2rem;" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h2 class="title">Ansar Nurmakhambet</h2>
+      <p class="section__text__p2">Economics Student</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('AnsarNurmakhambet_CV.pdf')">Download CV</button>
+        <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+      </div>
+      <div id="socials-container">
+        <img src="linked.png" alt="My LinkedIn profile" class="icon" onclick="window.open('https://www.linkedin.com/in/ansar-nurmakhambet-8523791b8/', '_blank')"/>
+        <img src="youtube.png" alt="My Youtube page" class="icon" onclick="window.open('https://www.youtube.com/@ansardel', '_blank')"/>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title" style="margin-bottom: 40px;">About Me 🖇</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="about.png" alt="Additional picture" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="nu.png" alt="Experience icon" class="icon" />
+            <h3>Experience</h3>
+            <p>Student Clubs <br />Throughout my university years, I was a part of several clubs</p>
+          </div>
+          <div class="details-container">
+            <img src="nu.png" alt="Education icon" class="icon" />
+            <h3>Education</h3>
+            <p>Bachelor of Arts in Economics<br />minor in World Languages and Linguistics</p>
+          </div>
+        </div>
+          <p style="text-align: center;">If you want to get to know more about me, please, follow this <a href="about.html" target="_blank">link.</a></p>
+      </div>
+    </div>
+    <img src="arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#hometown'" />
+  </section>
+  <section id="hometown">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title" style="margin-bottom: 30px;">Hometown 🌟</h1>
+    <div class="a-container">
+      <div class="details-container">
+        <h2 class="hometown-sub-title">Shymkent</h2>
+        <p>In order to learn about my hometown, you can use this <a href="hometown.html" target="_blank">link.</a></p>
+        <p>Some sneak peek for you:</p> <br>
+        <img src="shymk.jpg" class="project-img" />
+      </div>
+    </div>
+    <img src="arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#projects'" />
+  </section>
+
+  <section id="projects">
+    <p class="section__text__p1">Let's discuss some of my</p>
+    <h1 class="title">Projects 💥</h1>
+    <div class="a-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="design.jpg" alt="Project 1" class="project-img" />
+          </div>
+          <h2 class="hometown-sub-title project-title">Project One</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('guides.html', '_blank')">Learn More</button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="vlogs.jpg" alt="Project 2" class="project-img" />
+          </div>
+          <h2 class="hometown-sub-title project-title">Project Two</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('videomaking.html', '_blank')">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#hobbies'" />
+  </section>
+  <section id="hobbies">
+    <p class="section__text__p1">What do I do in my free time?</p>
+    <h1 class="title">Hobbies 🧁</h1>
+    <div class="a-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="baking.jpg" alt="Hobby 1" class="project-img" />
+          </div>
+          <h2 class="hometown-sub-title project-title">Baking</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('baking2.html', '_blank')">Explore</button>
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="hobby2.jpg" alt="Hobby 2" class="project-img" />
+          </div>
+          <h2 class="hometown-sub-title project-title">Staying In</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.instagram.com/reel/C2x3IJ7Sbu1/?igsh=bnhyd2FyamRnOWwy', '_blank')">What is it?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#professional'" />
+  </section>
+  <section id="professional">
+    <p class="section__text__p1">Economics related news</p>
+    <h1 class="title">Is the Economy down? 🗑</h1>
+    <div class="a-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="economics.jpg" alt="Economics Icon" class="project-img" />
+          </div>
+          <h2 class="hometown-sub-title project-title">News</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('economics.html', '_blank')">Dive into it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#additional'" />
+  </section>
+  <section id="additional">
+    <p class="section__text__p1">What did I learn?</p>
+    <h1 class="title">JS Showcase 🍀</h1>
+    <div class="a-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="javas.png" alt="JS Icon" class="project-img" />
+          </div>
+          <h2 class="hometown-sub-title project-title">Fun exercise</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('JSshowcase.html', '_blank')">Surprise</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
+  </section>
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me 🚀</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="mail.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:ansar.nurmakhambet@nu.edu.kz" target="_blank">ansar.nurmakhambet@nu.edu.kz</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="linked.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/ansar-nurmakhambet-8523791b8/" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>Copyright &#169; 2024 Ansar Nurmakhambet. I spent a lot of time on this💫</p>
+  </footer>
+</body>
+</html>

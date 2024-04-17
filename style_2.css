@@ -1,0 +1,60 @@
+.color-sec{background-color: #ffd7b5; padding: 20px;}
+.color-sec1{background-color: #CCCCFF;padding: 20px;}
+.top {
+        	font-family: 'Monaco', monospace; font-size: 16px; color:skyblue;
+        }
+.t-box {
+            border: 2px solid green;
+            padding: 5px;
+            width: 475px; 
+        }
+
+
+body {
+            margin: 30px;
+        }
+
+@media (max-width: 768px) {
+iframe {
+	max-width: 90%;
+}
+
+.box {
+            max-width: 80%;
+        }
+
+img{
+			border-radius: 7%;
+			max-width: 90%;
+		}
+
+    .color-sec, .color-sec1 {
+        padding: 20px;
+        align-items: center;
+    }
+
+    .t-box {
+        max-width: 90%; 
+        padding: 10px; 
+    }
+
+    .top {
+        font-size: 12px;
+    }
+            h1, h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                max-width: 90%;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }

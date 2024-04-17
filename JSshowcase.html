@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style type="text/css">
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #FAC898;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container2 {
+    max-width: 400px;
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ff964f;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #d65d26;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d0e384;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9fafb;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #dcdde1;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.instruction {
+    font-size: 18px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: bold;
+}
+
+
+#danceSelect {
+            font-size: 18px;
+            padding: 10px; 
+            margin: 20px 0; 
+        }
+
+#danceInfo {
+            font-size: 16px;
+            margin-top: 20px; 
+        }
+
+#guessInput {
+            font-size: 16px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+#message {
+            font-size: 16px; 
+            margin-top: 20px; 
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+        <h1>To-Do List</h1>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Enter your task(up to 5)...">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div class="instruction">Click on a task to mark it as done (sound on)</div>
+        <ul id="taskList"></ul>
+</div>
+<script>
+function addTask() {
+    var input = document.getElementById("taskInput");
+    var task = input.value.trim();
+
+    if (task === "") {
+        alert("Please enter a task!");
+        return;
+    }
+
+    var ul = document.getElementById("taskList");
+    if (ul.getElementsByTagName("li").length >= 5) {
+        alert("You can only have up to 5 tasks!");
+        return;
+    }
+
+    var li = document.createElement("li");
+    li.textContent = task;
+
+    var sound = new Audio('done.mp3');
+
+    li.onclick = function() {
+        li.classList.toggle("done");
+        sound.play();
+    };
+
+    ul.appendChild(li);
+
+    input.value = "";
+}
+</script>
+
+<div class="container2">
+        <h1>Choose Dance Style</h1>
+    <select id="danceSelect">
+        <option value="hiphop">Hip Hop</option>
+        <option value="afro">Afro</option>
+        <option value="tango">Tango</option>
+        <option value="vogue">Vogue</option>
+    </select>
+
+    <div id="danceInfo"></div>
+</div>
+
+<script>
+        const danceSelect = document.getElementById('danceSelect');
+        const danceInfoDiv = document.getElementById('danceInfo');
+
+        danceSelect.addEventListener('change', function() {
+            const selectedDance = danceSelect.value;
+
+            switch (selectedDance) {
+                case 'hiphop':
+                    danceInfoDiv.innerText = 'Hip-hop dance is a vibrant form of dance that combines a variety of freestyle movements to create a cultural piece of art. Through its three main styles of popping, locking, and breaking, hip-hop dance has evolved into one of the most popular and influential styles of dance.';
+                    break;
+                case 'afro':
+                    danceInfoDiv.innerText = 'Afro Dance Styles is a combination of energetic dance styles that originate in Africa. The style derives from Kuduro, an Angolan dance style that evolved during a period of war, making it quite a hard dance style.';
+                    break;
+                case 'tango':
+                    danceInfoDiv.innerText = 'Tango is a partner dance and social dance that originated in the 1880s along the Río de la Plata, the natural border between Argentina and Uruguay. The tango was born in the impoverished port areas of these countries from a combination of Argentine Milonga, Spanish-Cuban Habanera, and Uruguayan Candombe celebrations.';
+                    break;
+                case 'vogue':
+                    danceInfoDiv.innerText = 'Vogue, or voguing is a type of improvisational dance inspired by the poses of models in fashion magazines. Many will recognise the style of dance from Madonnas Vogue music video, with its model-like poses and a runway walk that includes angles, boxes, and lines with the body and arms on the beat';
+                    break;
+                default:
+                    danceInfoDiv.innerText = 'Please select a dance style.';
+            }
+        });
+    </script>
+
+    <div class="container2">
+        <h1>Guess the Number</h1>
+        <p>Guess a number between 1 and 10:</p>
+        <input type="number" id="guessInput" min="1" max="10" />
+        <button id="gB">Submit</button>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        let attempts = 0;
+        const maxAttempts = 3;
+
+        const guessInput = document.getElementById('guessInput');
+        const gB = document.getElementById('gB');
+        const messageDiv = document.getElementById('message');
+
+        gB.addEventListener('click', function() {
+            const guess = parseInt(guessInput.value); 
+            attempts++;
+
+            if (guess < 1 || guess > 10) {
+                alert('Please enter a number between 1 and 10.');
+                return;
+            }
+
+            if (guess === randomNumber) {
+                messageDiv.innerText = 'Congratulations! You guessed the right number.';
+                gB.disabled = true;
+            } else if (guess < randomNumber) {
+                messageDiv.innerText = 'Too low! Try again.';
+            } else {
+                messageDiv.innerText = 'Too high! Try again.';
+            }
+
+            if (attempts >= maxAttempts && guess !== randomNumber) {
+                messageDiv.innerText = `Sorry! The correct number was ${randomNumber}.`;
+                gB.disabled = true;
+            }
+        });
+    </script>
+</body>
+</html>
